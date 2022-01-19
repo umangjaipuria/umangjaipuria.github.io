@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>~/ on umangj.xyz</title>
-    <link>https://umangjaipuria.github.io/</link>
+    <link>https://umangj.xyz/</link>
     <description>Recent content in ~/ on umangj.xyz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 30 Sep 2021 11:16:00 -0800</lastBuildDate>
     
-	<atom:link href="https://umangjaipuria.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://umangj.xyz/index.xml" rel="self" type="application/rss+xml" />
     
     
     
