@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="shortcut icon" href="https://umangj.xyz/favicon.ico">
+    
+    <link rel="stylesheet" href="/css/style.min.css">
+
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VV2R9ZVM78"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-VV2R9ZVM78', { 'anonymize_ip': false });
+}
+</script>
+
+  
+    <title>Android AOSP vs OHA · umangj.xyz</title>
+</head>
+<body><header id="banner">
+    <h4><a href="https://umangj.xyz">umangj.xyz</a></h4>
+    <nav>
+        <ul>
+            <li>
+                <a href="/writing/" title="Writing">Writing</a>
+            </li><li>
+                <a href="/about/" title="about">about</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main id="content">
+<article>
+    <header id="post-header">
+        <h1>Android AOSP vs OHA</h1>
+            <div>
+                <time>August 30, 2014</time>
+                </div></header><p>There are two flavors of the Android OS:</p>
+<ol>
+<li>OHA &ndash; Open Handset Alliance &ndash;  which needs to be licensed from Google and used within their T&amp;Cs, and</li>
+<li>AOSP &ndash; which is the open source version of Android that anyone can fork, modify and use as they wish.</li>
+</ol>
+<p>Here’s a quick explanation of the two.</p>
+<p>Google develops the Android OS. This development happens behind closed doors and once every so often Google publishes the latest version to open source.</p>
+<h4 id="open-handset-alliance">Open Handset Alliance</h4>
+<p>The <a href="https://en.wikipedia.org/wiki/Open_Handset_Alliance">OHA</a> version of Google contains this Android OS as well as apps and services (that are NOT open source) provided by Google. Apps such as Google Maps, YouTube, GMail are part of this bundle. The Google Play Store itself is a big part – that allows users to find and download apps and content from this appstore. Most importantly, the bundle includes Google Play Services – which is a set of services that 3rd party apps can use on this version of Android. For example, authentication using the user’s Google account, in-app purchases through Google Wallet, distributing / updating apps through the Play Store, push notifications, etc.</p>
+<figure class="inline-image"><img src="img-google-services.png"
+         alt="Services included by Google in Android OHA"/><figcaption>
+            <p>Services included by Google in Android OHA
+                    <a href="https://developer.android.com/google/index.html">(source)</a></p>
+        </figcaption>
+</figure>
+
+<p>The OHA version of Android is built for Google’s line of Nexus devices. You may see it referred to as “vanilla android”. When a handset manufacturer <a href="http://en.wikipedia.org/wiki/Android_(operating_system)#Licensing">licenses</a> this from Google, it is obligated to adhere to <a href="http://online.wsj.com/news/articles/SB10001424052702304888404579378850231234912">certain rules</a>: there are some UI restrictions, a suite of Google Apps need to be present on the device – Google Maps, YouTube, GMail, Calendar, etc. Google Search will need to be the default search engine. There is a long document describing all these rules that Google calls the <a href="http://source.android.com/compatibility/">Compatibility Definition Document</a>. Additionally, the manufacturer is now tied into Google’s ecosystem. It cannot build any device that does follow these rules.</p>
+<h4 id="android-open-source-project">Android Open Source Project</h4>
+<p><a href="https://source.android.com/">AOSP</a> is the open source version of Android. Any one can fork it, modify and use it however they wish, without restriction. However, this is simply the OS without any supporting ecosystem – no app store, cloud infrastructure, push notification system, or any Google Apps. In fact, manufacturers using just AOSP (without adhering to compatibility) can not include Google Apps on their device.</p>
+<p>It is possible for users to install Google’s apps on their AOSP devices (some of them, at least) but this is usually not formally supported and users do it at their own risk.</p>
+<p>Amazon’s Kindle Fire is perhaps the most famous fork of AOSP. CyanogenMod is another.</p>
+</article>
+
+        </main><footer id="footer">
+    
+</footer>
+</body>
+</html>
