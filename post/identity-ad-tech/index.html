@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="shortcut icon" href="https://umangj.xyz/favicon.ico">
+    
+    <link rel="stylesheet" href="/css/style.min.css">
+
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VV2R9ZVM78"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-VV2R9ZVM78', { 'anonymize_ip': false });
+}
+</script>
+
+  
+    <title>The battle for identity in ad tech · umangj.xyz</title>
+</head>
+<body><header id="banner">
+    <h4><a href="https://umangj.xyz">umangj.xyz</a></h4>
+    <nav>
+        <ul>
+            <li>
+                <a href="/writing/" title="Writing">Writing</a>
+            </li><li>
+                <a href="/about/" title="about">about</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main id="content">
+<article>
+    <header id="post-header">
+        <h1>The battle for identity in ad tech</h1>
+            <div>
+                <time>October 12, 2014</time>
+                </div></header><p>The critical piece of being able to show you the most relevant ad, at the right time, is knowing who you are. Not your name, or social security number, but just knowing if you are the same person who visited Macy’s website last week when you are browsing Amazon today. Anonymous identity, if you will.</p>
+<h3 id="why-is-identity-important">Why is identity important?</h3>
+<p>The better marketers get at identifying individual users, the better they can follow them across website or app visits, across their various smartphones, tablets or laptops, and even across visits to physical stores. This helps marketers in three ways:</p>
+<p>a) More accurate identification means marketers can collect more data about a user’s online behavior. This directly feeds into which ads to show users, and more data implies more relevant ads.</p>
+<p>If they can ascertain that the person searching for bow ties on Zappos on an iPad on the weekend and the person looking at bow ties on Bonobos on their work computer during lunch and the person playing Words With Friends on their iPhone in the evening with a few minutes to spare are indeed the same person, they can show him a very relevant ad at a time he may actually make the purchase.</p>
+<p>b) When the time comes to show you an ad, the marketer will have a way to identify you, look up information they already have about you, and figure out the best ad for you. This is the second part of the example above, but has to do with targeting the right ad than collecting data.</p>
+<p>c) Lastly, attribution: being able to identify that the person who bought the bow tie actually came from an ad on Words With Friends will let the marketer be more confident in paying WWF even more money for the ad the next time.</p>
+<p>Re-targeting is a great example of identity working really well. And as John Battelle said a couple of years ago: <a href="http://battellemedia.com/archives/2012/12/retargeting-is-just-phase-one.php">re-targeting is just phase one</a>.</p>
+<h3 id="the-problems-with-identity-today">The problems with identity today</h3>
+<p>On the web (especially desktop), cookies worked very well to tell if you were the same person visiting various websites. It even worked well to share this information with other websites. A website (say, A) could host a pixel from another website (say, B). This allowed B to know when you visited A and drop a cookie in your browser. B could then use this information in various ways – for their own advertising or to improve A’s advertising on B or elsewhere.</p>
+<p>This breaks down today for two reasons:</p>
+<p><strong>a) Multiple devices.</strong> Users use multiple devices to access the same information and make the same transactions — a laptop, a smartphone, a tablet, and in the future, watches and glasses and who knows what else. And they shift between devices almost seamlessly.</p>
+<p>As an example, here’s how often people start various activities on their smartphone and continue it elsewhere:</p>
+<figure class="inline-image"><img src="img-multi-devices.png"/><figcaption>
+            <p>
+                    <a href="https://medium.com/@ameet/why-mobile-roi-is-still-hard-one-year-later-bd1e2694c064">(source)</a></p>
+        </figcaption>
+</figure>
+
+<p>It is ironic that 10 years ago, marketers were trying to solve the opposite problem: who in the family is currently on the shared home computer and whether to show an ad for the latest video game or for a hotel in Belize.</p>
+<figure class="inline-image"><img src="img-shared-computer-to-many-devices.png"
+         alt="From a shared computer for a family to many devices for each person"/><figcaption>
+            <p>From a shared computer for a family to many devices for each person</p>
+        </figcaption>
+</figure>
+
+<p><strong>b) Apps are changing the game entirely.</strong> Firstly, there is no concept of cookies in apps. Even browsing the web on mobile has its own challenges with cookies. Secondly, apps are tightly controlled by Apple and Google: they have forbidden apps to access the (permanent) device ID, instead creating Advertising IDs for such use. But there are (artificial and technical) restrictions here: For example, only apps that actually show ads are allowed to read a user’s Ad ID; it is harder to track user behavior (as the convenient unit of a webpage doesn’t exist in apps); embedded browser views inside apps do not save cookies across sessions, etc. etc.</p>
+<h3 id="the-battle-for-owning-identity">The battle for owning identity</h3>
+<p>In the absence of an open standard like cookies, identity providers have ended up becoming the closest source of truth for advertising.</p>
+<p>Open ID never really caught on, but its hypothesis was correct: users don’t like creating and managing separate username/passwords for every service they use. And website and app developers prefer not to build a login/ID system if they can just let their users “login with Google” or “login with Facebook”or “login with Twitter”.</p>
+<p><strong>Facebook</strong> and <strong>Google</strong> are the largest identity providers today (<a href="http://qz.com/271286/how-facebook-and-google-are-taking-over-your-online-identity/">source</a>), but the battle is intensifying as everyone begins to realize the importance of this.</p>
+<figure class="inline-image"><img src="img-social-login-share.png"
+         alt="Identity providers today"/><figcaption>
+            <p>Identity providers today
+                    <a href="http://qz.com/271286/how-facebook-and-google-are-taking-over-your-online-identity/">(source)</a></p>
+        </figcaption>
+</figure>
+
+<p>However, identity is not limited to “login with X” functionality. Providing developers with cloud backend services (Parse, Apigee, etc.) analytics and marketing (Mixpanel, Urban Airship, etc.), and social sharing (“Like”, “Tweet” buttons, etc.) have proven successful strategies to get a foot in the door into apps and websites. Data then collected by these services can be tied back to identity.</p>
+<p><strong>Google</strong> and <strong>Apple</strong> have a natural advantage with identity as they own the Android and iOS operating systems (respectively) and can tie users’ email addresses to their mobile device(s) and their app store used to download apps.</p>
+<p>But the two companies have very different views when it comes to user data. While Google is using data to make its products better (and sell ads), Apple explicitly calls this out as abuse of privacy and focuses on hardware and the premium user experience. I agree with Dustin Curtis when he says <a href="https://dcurt.is/privacy-vs-user-experience">Apple’s stance on data and privacy will leave it far behind Google</a>.</p>
+<p><strong>Amazon</strong> and <strong>Twitter</strong> are significant contenders too. Both have a plethora of app developer services (analytics, a/b testing, etc.), powerful ad networks, and plenty of commerce and social (respectively) data. Amazon also has a payments service for developers (Pay with Amazon) that necessarily ties into identity, and an App Store that has been quietly growing. Everything eventually will tie back into identity and ads.</p>
+<p>Winning mobile advertising promises to be the biggest prize in the coming years (perhaps the biggest since mobile itself or even since e-commerce). The size of the market has been consistently blowing away all expectations. The stage is global this time, and the players are battle-hardened, aggressive, and have come armed.</p>
+</article>
+
+        </main><footer id="footer">
+    
+</footer>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="shortcut icon" href="https://umangj.xyz/favicon.ico">
+    
+    <link rel="stylesheet" href="/css/style.min.css">
+
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VV2R9ZVM78"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-VV2R9ZVM78', { 'anonymize_ip': false });
+}
+</script>
+
+  
+    <title>Personalizing UI · umangj.xyz</title>
+</head>
+<body><header id="banner">
+    <h4><a href="https://umangj.xyz">umangj.xyz</a></h4>
+    <nav>
+        <ul>
+            <li>
+                <a href="/writing/" title="Writing">Writing</a>
+            </li><li>
+                <a href="/about/" title="about">about</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main id="content">
+<article>
+    <header id="post-header">
+        <h1>Personalizing UI</h1>
+            <div>
+                <time>August 12, 2014</time>
+                </div></header><p>When you think of personalization, the first thing that comes to mind is Amazon showing you products they think you will want to buy. If your work is proximal to tech, you already know that ads online, Google search results, the Facebook feed, etc. are all also personalized. Aside: if you are a tech Muggle, you probably don&rsquo;t think of personalization at all, and these products are just seem very interesting and engaging!</p>
+<p>Invariably, personalization is assumed to apply to content &ndash; products to buy, ads to click, posts to like, etc. The scaffolding around the content is ignored, and underestimated, when it comes to suiting individual preferences.</p>
+<p>On mobile, where the battle for attention - a fleeting glance here and a casual swipe there - is more Darwinian than on the web, unnecessary taps or pauses are an evolutionary disadvantage for apps. I expect we will see apps starting to personalize their UI and make it more fluid.</p>
+<p>While having UI be dynamic is more challenging, there are simple ways for interfaces to adapt to a user&rsquo;s context.</p>
+<p>Mobile games were perhaps the first to innovate in this area (as they are in most areas concerning consumer apps!) Starting with a dedicated first-time user experience (FTUE or &lsquo;efftooey&rsquo;) that would run only for new users to introduce them to basic game elements, or have dedicated quests to help users navigate through different parts of the game. Non-game apps have started to take a leaf out of this book. Here are screenshots of the FTUE of a popular to-do app called Weave:</p>
+<figure class="inline-image"><img src="img-weave-ftue.jpg"
+         alt="Onboarding flow of Weave"/><figcaption>
+            <p>Onboarding flow of Weave
+                    <a href="https://www.kryshiggins.com/first-time-user-experiences-in-mobile-apps/">(source)</a></p>
+        </figcaption>
+</figure>
+
+<p>Secret and Slack have recently received accolades for their FTUE too. Smashing Magazine has a really <a href="https://www.smashingmagazine.com/2014/08/mobile-onboarding-beginners-guide/">interesting guide</a> to FTUEs on mobile.</p>
+<p>Adapting UI to context is prevalent outside of FTUEs too:</p>
+<figure class="inline-image"><img src="img-gps-ui.png"
+         alt="GPS app changing color schemes at night"/><figcaption>
+            <p>GPS app changing color schemes at night</p>
+        </figcaption>
+</figure>
+
+<ol>
+<li>Screens on GPS devices switch to a darker color scheme at night, to reduce glare and distraction while driving.</li>
+<li>Language localization is perhaps one of the oldest forms of adapting the interface for the user.</li>
+<li>Responsive web pages are a great example of the UI adjusting automatically with the context being your screen size.</li>
+</ol>
+<figure class="inline-image"><img src="img-uber-ui.jpg"
+         alt="Uber&amp;rsquo;s default view changes"/><figcaption>
+            <p>Uber&rsquo;s default view changes</p>
+        </figcaption>
+</figure>
+
+<ol start="4">
+<li>The Uber app changes its default view depending on whether you are about to request a ride or have already requested a ride to show you relevant information accordingly.</li>
+<li>The new Foursquare app notifies you of interesting places around you, and the notification is triggered only when it sensess that your location has changed.</li>
+</ol>
+<figure class="inline-image"><img src="img-one-thumb.png"
+         alt="Hand postures when using a mobile device"/><figcaption>
+            <p>Hand postures when using a mobile device
+                    <a href="https://theburningmonk.com/2014/06/ndc-oslo-2014-takeaways-from-keynote-its-a-writeread-web/">(source)</a></p>
+        </figcaption>
+</figure>
+
+<ol start="6">
+<li>Knowing that most users use only the thumb of their dominant hand to interact with an app, apps should structure their navigation accordingly, AND laterally invert key elements for left-handed users.</li>
+</ol>
+<p>In contrast, desktop interfaces have the luxury of screen real estate and haven&rsquo;t needed to innovate here. They often default to showing everything and the kitchen sink at the user.</p>
+<figure class="inline-image"><img src="img-word-ui-clutter.png"
+         alt="Microsoft Word on desktop with all menus enabled"/><figcaption>
+            <p>Microsoft Word on desktop with all menus enabled</p>
+        </figcaption>
+</figure>
+
+<p><strong>Three key ingredients to consider while personalizing interfaces are Identity, Context and Behavior.</strong></p>
+<p><strong>Identity:</strong> There are two parts to identity: the first is being able to recognize every user when they come back to your app, even on different devices. The second is knowing some profile information about the user &ndash; traits that let you tailor their experience: whether they are left or right-handed, languaage preferences, network bandwidth, etc.</p>
+<p><strong>Context:</strong> Context is about the here and now of a user using your app. If they are at home or elsewhere, sitting in a restaurant or walking on the street, whether they came to the app from a particular notification or opened it of their own accord.</p>
+<p><strong>Behavior:</strong> Interpreting a user&rsquo;s previous actions to anticipate what they might do in the future is understanding their behavior. This is where personalization gets complex but also where the magic happens. For a calendaring app, is the user scheduling a business meeting or a blocking time for a personal task? For a payment app, is it being used to send money to a friend or pay a bill? For a news app, does this user often share articles they find interesting with their spouse?</p>
+<p>However, there is a slippery slope to fluid UI. The best interfaces are the ones that feel familiar &ndash; when the user knows where to find things. Getting personalization wrong and not having a consistent familiarity can be the worst of both worlds.</p>
+</article>
+
+        </main><footer id="footer">
+    
+</footer>
+</body>
+</html>
