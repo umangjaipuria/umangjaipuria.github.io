@@ -1,3 +1,4 @@
 Sitemap: https://umangj.xyz/sitemap.xml
 
 User-agent: *
+Disallow: /moved/
