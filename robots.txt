@@ -1,4 +1,7 @@
-Sitemap: https://umangj.xyz/sitemap.xml
-
 User-agent: *
 Disallow: /moved/
+
+User-agent: *
+Allow: /
+
+Sitemap: https://umangj.xyz/sitemap.xml
