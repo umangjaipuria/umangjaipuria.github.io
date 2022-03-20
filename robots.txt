@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
+User-agent: Googlebot
+Disallow: /moved/
+
 Sitemap: https://umangj.xyz/sitemap.xml
