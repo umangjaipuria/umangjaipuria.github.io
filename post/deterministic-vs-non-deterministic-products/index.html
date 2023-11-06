@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="shortcut icon" href="https://umangj.xyz/favicon.ico">
+    
+    <link rel="canonical" href="https://forcemultipliers.substack.com/p/deterministic-vs-non-deterministic">
+    
+    
+    <link rel="stylesheet" href="/css/style.min.css">
+
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VV2R9ZVM78"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-VV2R9ZVM78', { 'anonymize_ip': false });
+}
+</script>
+
+    <meta property="og:title" content="Deterministic vs Non-deterministic products"/>
+    <meta property="og:description" content="How to build products that have a mind of their own (AI-driven)" /><meta property="og:type" content="article" />
+<meta property="og:url" content="https://umangj.xyz/post/deterministic-vs-non-deterministic-products/" /><meta property="article:section" content="writing" />
+    
+        <meta property="article:published_time" content="2023-02-26T06:00:00-08:00" />
+    
+    
+        <meta property="article:modified_time" content="2023-02-26T06:00:00-08:00" />
+    <meta property="og:site_name" content="umangj.xyz" />
+    <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Deterministic vs Non-deterministic products"/>
+    <meta name="twitter:description" content="How to build products that have a mind of their own (AI-driven)" /><meta name="twitter:site" content="@umang"/>
+
+  
+    <title>Deterministic vs Non-deterministic products · umangj.xyz</title>
+</head>
+<body><header id="banner">
+    <h4><a href="https://umangj.xyz">umangj.xyz</a></h4>
+    <nav>
+        <ul>
+            <li>
+                <a href="/writing/" title="Writing">Writing</a>
+            </li><li>
+                <a href="/about/" title="about">about</a>
+            </li><li>
+                <a href="https://forcemultipliers.substack.com/subscribe" title="subscribe">subscribe</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main id="content">
+<article>
+    <header id="post-header">
+        <h1>Deterministic vs Non-deterministic products</h1>
+            <div>
+                <time>February 26, 2023</time>
+                </div></header><p>It used to be that you could ask your customer simple questions: <em>How do you do this today? What happens next? What is a successful outcome? What is not? What makes your work hard? What might make it easy?</em> The answers would provide a straightforward path to determining what your product should do to solve their problems. With the answers, you would write a <em>product specification</em>: a detailed list of instructions for how the software must behave, according to a set of inputs from the user: clicks, taps, typed text. Sometimes different customers (or <em>use cases</em>) demanded different behavior and you would create branches in the logic accordingly.</p>
+<p><strong>Products behaved exactly according to this set of written rules — the “<em>business logic</em>”. Any deviation from these rules was a bug to be squashed. It was all very deterministic.</strong></p>
+<p>You’ve probably seen this flowchart of how Slack decides when to send a push notification — it does the rounds on Twitter / LinkedIn every few months. It is the perfect example for a deterministic flow: all the cases are known in advance, and minutely accounted for. (Later in this post, we will take a look at making this non-deterministic.)</p>
+<figure class="inline-image"><img src="img-slack-notification-flowchart.jpg"/>
+</figure>
+
+<p>These days products are more complex:</p>
+<ul>
+<li>
+<p><strong>If a product has a machine learning feature, as is increasingly frequent, its behavior is by definition probabilistic.</strong> It is impossible to be prescriptive or even know in advance what the model will churn out. With sophisticated techniques like deep learning, it is also impossible to retroactively understand why the model behaved a certain way.</p>
+</li>
+<li>
+<p><strong>Internet products often contain user generated content</strong> (like social feeds, customer reviews, etc) <strong>or depend on externalities you cannot control</strong> (like Uber drivers or Doordash restaurants). You can never fully know all the inputs to your product and hence the resulting user experience.</p>
+</li>
+</ul>
+<p>To make things more convoluted, we don’t like dealing with uncertainty. <strong>Our minds are tuned to interpreting the world by looking for reliable, repeating patterns.</strong> Users’ expectations of products is from this frame of reference — if nothing obvious has changed in how they use it, they expect nothing to change in how it behaves. Deterministic.</p>
+<p><strong>There is an ever-widening gap between that expectation (deterministic) and how products are now designed to act (non-deterministic).</strong> The tweet below is a perfect example of this dissonance.</p>
+<figure class="inline-image"><img src="img-tweet-probabilistic-confusion.webp"/>
+</figure>
+
+<p>In a world where artificial intelligence is about to “eat software” (c.f. <a href="https://a16z.com/2011/08/20/why-software-is-eating-the-world/">Software is eating the world</a>), how do you think about building non-deterministic products? What do you do when you cannot simply write “product requirements”? How do you minimize the dissonance for your users?</p>
+<p>Here are 5 mindset shifts to make when building such products:</p>
+<h1 id="1-think-in-terms-of-objectives">1. Think in terms of objectives</h1>
+<p>Imagine a self-driving car: you can neither steer it nor step on the gas or brakes, but you can give it a destination. The “destination” for these products is the outcome you want to achieve. <strong>Minutely specifying product behavior is replaced by defining product objectives and the stepping stones to that outcome.</strong> These typically take on the form of success metrics (leading and lagging) that can become the objective functions of the underlying models. This does mean you need to build and instrument your product where the intermediate and final success states are legible to the engines driving the product.</p>
+<h1 id="2-create-feedback-loops">2. Create feedback loops</h1>
+<p>You cannot be prescriptive about what to do in every situation, but you can tell a model when it gets things wrong and when it gets things right. <strong>Create affordances in the product for users to express this, as they use the product. Models take this feedback into their training and constantly update themselves — your product is constantly improving on its own.</strong></p>
+<p>Here is <a href="https://sarahtavel.medium.com/feedback-loops-and-googles-home-field-advantage-with-llms-530e8099c7ec">Sarah Tavel on feedback loops</a>:</p>
+<blockquote>
+<p>When I was at Pinterest leading product for the Discovery team, we started to leverage deep learning for our recommendations. It was always the case that while deep learning enabled a step-function change in the results (as measured by user engagement), the results got dramatically better once we took that user engagement data and fed it back into the model to further tune the results. We’d go from a place of discontinuous change with each step-function upgrade of the model, to a world with a compounding feedback loop.</p>
+</blockquote>
+<p>Even Chat GPT has a simple feedback mechanism — notice the thumbs up / thumbs down in their UI? One of the slickest feedback mechanism is in TikTok, where swiping away a video before finishing is negative feedback and watching it in its entirety is positive feedback — users generate a feedback loop in the natural course of using TikTok, without taking any extra steps.</p>
+<h1 id="3-see-like-a-state">3. See like a state</h1>
+<p>The book <a href="https://www.amazon.com/Seeing-Like-State-Condition-Paperbacks-ebook/dp/B085CMNS8P">Seeing Like a State</a> is a treatise on how governments have evolved to understand a nation, its citizens, and their lives from a central perspective to aid their planning — things like permanent last names, standardization of weights and measures, land surveys, all were created as modern governments felt the imperative to govern.</p>
+<p>The analogy* can extend to non-deterministic products. Every user, every situation, every set of input conditions results in a slightly different product experience. It is impossible to keep track of the countless individual flows that might get created. Instrument your product and create metrics to log everything that happens, for every user. <strong>Ultimately, you will need to rely on averages, medians, and points along a distribution to understand your product as there is no one single view.</strong></p>
+<p>Here’s an example of the difficulty this poses in practice. From <a href="https://www.platformer.news/p/yes-elon-musk-created-a-special-system">Casey Newton’s recent coverage about Elon Musk trying to understand why the Twitter algorithm is not prioritizing his tweets</a>:</p>
+<blockquote>
+<p>Absurd as Musk’s antics are, they do highlight a tension familiar to almost anyone who has ever used a social network: why are some posts more popular than others? Why am I seeing this thing, and not that one?  Engineers for services like TikTok and Instagram can offer partial, high-level answers to these questions. But ranking algorithms make predictions based on hundreds or thousands of signals, and deliver posts to millions of users, making it almost impossible for anyone to say with any degree of accuracy who sees what.</p>
+</blockquote>
+<p>With earlier generations of machine learning — techniques using regression, for example — it would be possible to develop intuition on why the model behaved a certain way, and hence explain outcomes. With techniques like deep learning, ML became a complete black box. It is impossible to know why it does what it does.</p>
+<p><em>(* I must acknowledge that Seeing Like a State is about all the ways centralized planning from governments has failed, but that doesn’t denigrate efforts to gain legibility into a large system comprised of diverse components.)</em></p>
+<h1 id="4-catch-edge-cases">4. Catch edge cases</h1>
+<p>The other side of the coin of ‘seeing like a state’ is to pay attention to some individual experiences. After all, <strong>your customer isn’t a statistical average of others, but real people or businesses and their experiences are what matter. It becomes important to find and pay attention to the edge cases, wherever they happen, and address them.</strong></p>
+<p>You’ve all seen the <a href="https://stratechery.com/2023/from-bing-to-sydney-search-as-distraction-sentient-ai/">recent crazy responses by the Bing chatbot Sydney</a> going viral, but <a href="https://twitter.com/xlr8harder/status/1625770962699395072">here is a good reminder</a>:</p>
+<figure class="inline-image"><img src="img-tweet-bing-responses.jpg"/>
+</figure>
+
+<p>The Twitter algorithm too would be the subject of great ire from a small minority of users. It worked mostly fine for everyone else. The important part is to find these edge cases — the small number of users that encounter your product in an outlier state, and address them. Not only to fix the user experience in those cases, but also because <strong>these outlier examples are going to shape the narrative and perception of your product</strong> (remember the “pants that followed you on the internet”?).</p>
+<h1 id="5-get-ahead-of-user-confusion">5. Get ahead of user confusion</h1>
+<p>People will find non-deterministic products erratic, like in the tweet above about ChatGPT returning different responses, or in the excerpt from Casey Newton’s article. When this happens, <strong>they do one of two things: (a) blame themselves for not knowing how to use the product, call it too complicated for them to learn, and quit, or (b) assume something is broken and decide they can’t trust something they can’t understand.</strong></p>
+<p>To make matters worse, a machine learning model doesn’t always get the answer right. It learns from its mistakes and improves, but there is nothing quite as maddening as someone who is unpredictable, refuses to explain their process, and got it wrong that one time!</p>
+<p>The best way to reduce the dissonance between a blackbox model and how it manifests into a user experience is to:</p>
+<ol>
+<li>
+<p><strong>Tell the user what to expect, and</strong></p>
+</li>
+<li>
+<p><strong>Give them some semblance of control and options they can choose from.</strong></p>
+</li>
+</ol>
+<p><strong>(1)</strong> is important — there is a significant step change in the experience between deterministic and non-deterministic products. In the … ahem … future, all products will be “non deterministic”; we are in the midst of this shift but until it becomes commonplace, user education will be a key component of the experience. Better onboarding / FTUE / tutorials go a long way to educate users on what to expect and how to deal with unexpected outcomes.</p>
+<p>Not doing <strong>(2)</strong> is a common mistake ML maximalists make. Yes, the dream is to make every product be completely hands-off-the-wheel-self-driving, but don’t start there. If possible, give your users knobs and levers to tweak their experience, or multiple options where they can decide which fits them best. <strong>Google Maps</strong> gives you multiple routes you can choose from. <strong>Twitter</strong> lets you switch between the algorithmic feed and the non-algorithmic one. <strong>Chat GPT</strong> retains context of previous prompts and answers so you can ask follow up questions, revise things, make suggestions.</p>
+<hr/>
+<h1 id="from-how-to-act-to-how-to-think">From <em>how-to-act</em> to <em>how-to-think</em></h1>
+<p>That Slack notification flowchart was a set of instructions on how the system should act in every situation. If that system were to be re-done in a non-deterministic manner, the way to approach it is as if you were teaching someone how to think.</p>
+<p>Here is one possible way the flowchart might look:</p>
+<figure class="inline-image"><img src="img-slack-notification-ml-flowchart.png"/>
+</figure>
+
+<p>This, of course, is very simplistic. The main point of this illustration is how much of the logic that had to be determined ahead of time moves into a ‘blackbox’ ML model that is constantly learning and improving. Every interesting piece of content simply becomes a “candidate” for a push notification that the model can act on. The heavy lifting now needs to be done on:</p>
+<p>Reducing dissonance from the non-deterministic experience for the user, and</p>
+<p>Recognizing that the model has needs — feedback loops, user preferences, external context, bootstrapping, etc. — and designing the product to maximizing these inputs to the model.</p>
+<p><strong>It is usually hard to simply squeeze machine learning (non-determinism) into an existing deterministic product. Converting it into a non-deterministic product needs many product assumptions and user expectations to be fundamentally reset.</strong> But it unlocks much more capabilities as a result.</p>
+<p>In our example of Slack notifications, everyone part of a large and active Slack organization suffers from notification fatigue. There is not only a problem of too many notifications (every action you take in the app results in the possibility of multiple notifications coming back to you!), there is also a problem of you missing out on interesting conversations in other parts of Slack simply because they didn’t qualify for the various deterministic rules to trigger a notification. A non-deterministic product would be able to solve both.</p>
+<p>We’re only scratching the surface of non-deterministic products. <strong>This current wave of generative AI is going to make many more types of products non-deterministic, and likely result in entirely new kinds of products not possible earlier.</strong> The gap between what we are accustomed to and expect of our tools and the capabilities of technology products will only widen, and need to be bridged.</p>
+</article>
+
+        </main><footer id="footer">
+    
+</footer>
+</body>
+</html>
