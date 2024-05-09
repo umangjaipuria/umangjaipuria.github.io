@@ -9,16 +9,25 @@
     <link rel="stylesheet" href="/css/style.min.css">
 
     
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VV2R9ZVM78"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-VV2R9ZVM78', { 'anonymize_ip': false });
-}
-</script>
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-VV2R9ZVM78"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-VV2R9ZVM78');
+        }
+      </script>
+    
+  
+
 
     <meta property="og:title" content="Android AOSP vs OHA"/>
     <meta property="og:description" content="There are two flavors of the Android OS: OHA (the Open Handsent Alliance) which needs to be licenses, and AOSP (the open source version). Here&#39;s a quick explaination of the two." /><meta property="og:type" content="article" />
@@ -37,7 +46,7 @@ if (!doNotTrack) {
     <title>Android AOSP vs OHA · umangj.xyz</title>
 </head>
 <body><header id="banner">
-    <h4><a href="https://umangj.xyz">umangj.xyz</a></h4>
+    <h4><a href="https://umangj.xyz/">umangj.xyz</a></h4>
     <nav>
         <ul>
             <li>
@@ -65,11 +74,11 @@ if (!doNotTrack) {
 <p>Google develops the Android OS. This development happens behind closed doors and once every so often Google publishes the latest version to open source.</p>
 <h4 id="open-handset-alliance">Open Handset Alliance</h4>
 <p>The <a href="https://en.wikipedia.org/wiki/Open_Handset_Alliance">OHA</a> version of Google contains this Android OS as well as apps and services (that are NOT open source) provided by Google. Apps such as Google Maps, YouTube, GMail are part of this bundle. The Google Play Store itself is a big part – that allows users to find and download apps and content from this appstore. Most importantly, the bundle includes Google Play Services – which is a set of services that 3rd party apps can use on this version of Android. For example, authentication using the user’s Google account, in-app purchases through Google Wallet, distributing / updating apps through the Play Store, push notifications, etc.</p>
-<figure class="inline-image"><img src="img-google-services.png"
-         alt="Services included by Google in Android OHA"/><figcaption>
-            <p>Services included by Google in Android OHA
-                    <a href="https://developer.android.com/google/index.html">(source)</a></p>
-        </figcaption>
+<figure class="inline-image"><img src="/post/android-aosp-oha/img-google-services.png"
+    alt="Services included by Google in Android OHA"><figcaption>
+      <p>Services included by Google in Android OHA
+          <a href="https://developer.android.com/google/index.html">(source)</a></p>
+    </figcaption>
 </figure>
 
 <p>The OHA version of Android is built for Google’s line of Nexus devices. You may see it referred to as “vanilla android”. When a handset manufacturer <a href="http://en.wikipedia.org/wiki/Android_(operating_system)#Licensing">licenses</a> this from Google, it is obligated to adhere to <a href="http://online.wsj.com/news/articles/SB10001424052702304888404579378850231234912">certain rules</a>: there are some UI restrictions, a suite of Google Apps need to be present on the device – Google Maps, YouTube, GMail, Calendar, etc. Google Search will need to be the default search engine. There is a long document describing all these rules that Google calls the <a href="http://source.android.com/compatibility/">Compatibility Definition Document</a>. Additionally, the manufacturer is now tied into Google’s ecosystem. It cannot build any device that does follow these rules.</p>

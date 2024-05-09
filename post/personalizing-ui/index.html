@@ -9,16 +9,25 @@
     <link rel="stylesheet" href="/css/style.min.css">
 
     
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VV2R9ZVM78"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-VV2R9ZVM78', { 'anonymize_ip': false });
-}
-</script>
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-VV2R9ZVM78"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-VV2R9ZVM78');
+        }
+      </script>
+    
+  
+
 
     <meta property="og:title" content="Personalizing UI"/>
     <meta property="og:description" content="Personalization is usually assumed to apply to content. But the scaffolding around the content is equally important when it comes to suiting individual preferences." /><meta property="og:type" content="article" />
@@ -37,7 +46,7 @@ if (!doNotTrack) {
     <title>Personalizing UI · umangj.xyz</title>
 </head>
 <body><header id="banner">
-    <h4><a href="https://umangj.xyz">umangj.xyz</a></h4>
+    <h4><a href="https://umangj.xyz/">umangj.xyz</a></h4>
     <nav>
         <ul>
             <li>
@@ -61,19 +70,19 @@ if (!doNotTrack) {
 <p>On mobile, where the battle for attention - a fleeting glance here and a casual swipe there - is more Darwinian than on the web, unnecessary taps or pauses are an evolutionary disadvantage for apps. I expect we will see apps starting to personalize their UI and make it more fluid.</p>
 <p>While having UI be dynamic is more challenging, there are simple ways for interfaces to adapt to a user&rsquo;s context.</p>
 <p>Mobile games were perhaps the first to innovate in this area (as they are in most areas concerning consumer apps!) Starting with a dedicated first-time user experience (FTUE or &rsquo;efftooey&rsquo;) that would run only for new users to introduce them to basic game elements, or have dedicated quests to help users navigate through different parts of the game. Non-game apps have started to take a leaf out of this book. Here are screenshots of the FTUE of a popular to-do app called Weave:</p>
-<figure class="inline-image"><img src="img-weave-ftue.jpg"
-         alt="Onboarding flow of Weave"/><figcaption>
-            <p>Onboarding flow of Weave
-                    <a href="https://www.kryshiggins.com/first-time-user-experiences-in-mobile-apps/">(source)</a></p>
-        </figcaption>
+<figure class="inline-image"><img src="/post/personalizing-ui/img-weave-ftue.jpg"
+    alt="Onboarding flow of Weave"><figcaption>
+      <p>Onboarding flow of Weave
+          <a href="https://www.kryshiggins.com/first-time-user-experiences-in-mobile-apps/">(source)</a></p>
+    </figcaption>
 </figure>
 
 <p>Secret and Slack have recently received accolades for their FTUE too. Smashing Magazine has a really <a href="https://www.smashingmagazine.com/2014/08/mobile-onboarding-beginners-guide/">interesting guide</a> to FTUEs on mobile.</p>
 <p>Adapting UI to context is prevalent outside of FTUEs too:</p>
-<figure class="inline-image"><img src="img-gps-ui.png"
-         alt="GPS app changing color schemes at night"/><figcaption>
-            <p>GPS app changing color schemes at night</p>
-        </figcaption>
+<figure class="inline-image"><img src="/post/personalizing-ui/img-gps-ui.png"
+    alt="GPS app changing color schemes at night"><figcaption>
+      <p>GPS app changing color schemes at night</p>
+    </figcaption>
 </figure>
 
 <ol>
@@ -81,31 +90,31 @@ if (!doNotTrack) {
 <li>Language localization is perhaps one of the oldest forms of adapting the interface for the user.</li>
 <li>Responsive web pages are a great example of the UI adjusting automatically with the context being your screen size.</li>
 </ol>
-<figure class="inline-image"><img src="img-uber-ui.jpg"
-         alt="Uber&amp;rsquo;s default view changes"/><figcaption>
-            <p>Uber&rsquo;s default view changes</p>
-        </figcaption>
+<figure class="inline-image"><img src="/post/personalizing-ui/img-uber-ui.jpg"
+    alt="Uber&amp;rsquo;s default view changes"><figcaption>
+      <p>Uber&rsquo;s default view changes</p>
+    </figcaption>
 </figure>
 
 <ol start="4">
 <li>The Uber app changes its default view depending on whether you are about to request a ride or have already requested a ride to show you relevant information accordingly.</li>
 <li>The new Foursquare app notifies you of interesting places around you, and the notification is triggered only when it sensess that your location has changed.</li>
 </ol>
-<figure class="inline-image"><img src="img-one-thumb.png"
-         alt="Hand postures when using a mobile device"/><figcaption>
-            <p>Hand postures when using a mobile device
-                    <a href="https://theburningmonk.com/2014/06/ndc-oslo-2014-takeaways-from-keynote-its-a-writeread-web/">(source)</a></p>
-        </figcaption>
+<figure class="inline-image"><img src="/post/personalizing-ui/img-one-thumb.png"
+    alt="Hand postures when using a mobile device"><figcaption>
+      <p>Hand postures when using a mobile device
+          <a href="https://theburningmonk.com/2014/06/ndc-oslo-2014-takeaways-from-keynote-its-a-writeread-web/">(source)</a></p>
+    </figcaption>
 </figure>
 
 <ol start="6">
 <li>Knowing that most users use only the thumb of their dominant hand to interact with an app, apps should structure their navigation accordingly, AND laterally invert key elements for left-handed users.</li>
 </ol>
 <p>In contrast, desktop interfaces have the luxury of screen real estate and haven&rsquo;t needed to innovate here. They often default to showing everything and the kitchen sink at the user.</p>
-<figure class="inline-image"><img src="img-word-ui-clutter.png"
-         alt="Microsoft Word on desktop with all menus enabled"/><figcaption>
-            <p>Microsoft Word on desktop with all menus enabled</p>
-        </figcaption>
+<figure class="inline-image"><img src="/post/personalizing-ui/img-word-ui-clutter.png"
+    alt="Microsoft Word on desktop with all menus enabled"><figcaption>
+      <p>Microsoft Word on desktop with all menus enabled</p>
+    </figcaption>
 </figure>
 
 <p><strong>Three key ingredients to consider while personalizing interfaces are Identity, Context and Behavior.</strong></p>

@@ -11,16 +11,25 @@
     <link rel="stylesheet" href="/css/style.min.css">
 
     
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VV2R9ZVM78"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-VV2R9ZVM78', { 'anonymize_ip': false });
-}
-</script>
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-VV2R9ZVM78"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-VV2R9ZVM78');
+        }
+      </script>
+    
+  
+
 
     <meta property="og:title" content="Deterministic vs Non-deterministic products"/>
     <meta property="og:description" content="How to build products that have a mind of their own (AI-driven)" /><meta property="og:type" content="article" />
@@ -38,7 +47,7 @@ if (!doNotTrack) {
     <title>Deterministic vs Non-deterministic products · umangj.xyz</title>
 </head>
 <body><header id="banner">
-    <h4><a href="https://umangj.xyz">umangj.xyz</a></h4>
+    <h4><a href="https://umangj.xyz/">umangj.xyz</a></h4>
     <nav>
         <ul>
             <li>
@@ -60,7 +69,7 @@ if (!doNotTrack) {
                 </div></header><p>It used to be that you could ask your customer simple questions: <em>How do you do this today? What happens next? What is a successful outcome? What is not? What makes your work hard? What might make it easy?</em> The answers would provide a straightforward path to determining what your product should do to solve their problems. With the answers, you would write a <em>product specification</em>: a detailed list of instructions for how the software must behave, according to a set of inputs from the user: clicks, taps, typed text. Sometimes different customers (or <em>use cases</em>) demanded different behavior and you would create branches in the logic accordingly.</p>
 <p><strong>Products behaved exactly according to this set of written rules — the “<em>business logic</em>”. Any deviation from these rules was a bug to be squashed. It was all very deterministic.</strong></p>
 <p>You’ve probably seen this flowchart of how Slack decides when to send a push notification — it does the rounds on Twitter / LinkedIn every few months. It is the perfect example for a deterministic flow: all the cases are known in advance, and minutely accounted for. (Later in this post, we will take a look at making this non-deterministic.)</p>
-<figure class="inline-image"><img src="img-slack-notification-flowchart.jpg"/>
+<figure class="inline-image"><img src="/post/deterministic-vs-non-deterministic-products/img-slack-notification-flowchart.jpg">
 </figure>
 
 <p>These days products are more complex:</p>
@@ -74,7 +83,7 @@ if (!doNotTrack) {
 </ul>
 <p>To make things more convoluted, we don’t like dealing with uncertainty. <strong>Our minds are tuned to interpreting the world by looking for reliable, repeating patterns.</strong> Users’ expectations of products is from this frame of reference — if nothing obvious has changed in how they use it, they expect nothing to change in how it behaves. Deterministic.</p>
 <p><strong>There is an ever-widening gap between that expectation (deterministic) and how products are now designed to act (non-deterministic).</strong> The tweet below is a perfect example of this dissonance.</p>
-<figure class="inline-image"><img src="img-tweet-probabilistic-confusion.webp"/>
+<figure class="inline-image"><img src="/post/deterministic-vs-non-deterministic-products/img-tweet-probabilistic-confusion.webp">
 </figure>
 
 <p>In a world where artificial intelligence is about to “eat software” (c.f. <a href="https://a16z.com/2011/08/20/why-software-is-eating-the-world/">Software is eating the world</a>), how do you think about building non-deterministic products? What do you do when you cannot simply write “product requirements”? How do you minimize the dissonance for your users?</p>
@@ -100,7 +109,7 @@ if (!doNotTrack) {
 <h1 id="4-catch-edge-cases">4. Catch edge cases</h1>
 <p>The other side of the coin of ‘seeing like a state’ is to pay attention to some individual experiences. After all, <strong>your customer isn’t a statistical average of others, but real people or businesses and their experiences are what matter. It becomes important to find and pay attention to the edge cases, wherever they happen, and address them.</strong></p>
 <p>You’ve all seen the <a href="https://stratechery.com/2023/from-bing-to-sydney-search-as-distraction-sentient-ai/">recent crazy responses by the Bing chatbot Sydney</a> going viral, but <a href="https://twitter.com/xlr8harder/status/1625770962699395072">here is a good reminder</a>:</p>
-<figure class="inline-image"><img src="img-tweet-bing-responses.jpg"/>
+<figure class="inline-image"><img src="/post/deterministic-vs-non-deterministic-products/img-tweet-bing-responses.jpg">
 </figure>
 
 <p>The Twitter algorithm too would be the subject of great ire from a small minority of users. It worked mostly fine for everyone else. The important part is to find these edge cases — the small number of users that encounter your product in an outlier state, and address them. Not only to fix the user experience in those cases, but also because <strong>these outlier examples are going to shape the narrative and perception of your product</strong> (remember the “pants that followed you on the internet”?).</p>
@@ -122,7 +131,7 @@ if (!doNotTrack) {
 <h1 id="from-how-to-act-to-how-to-think">From <em>how-to-act</em> to <em>how-to-think</em></h1>
 <p>That Slack notification flowchart was a set of instructions on how the system should act in every situation. If that system were to be re-done in a non-deterministic manner, the way to approach it is as if you were teaching someone how to think.</p>
 <p>Here is one possible way the flowchart might look:</p>
-<figure class="inline-image"><img src="img-slack-notification-ml-flowchart.png"/>
+<figure class="inline-image"><img src="/post/deterministic-vs-non-deterministic-products/img-slack-notification-ml-flowchart.png">
 </figure>
 
 <p>This, of course, is very simplistic. The main point of this illustration is how much of the logic that had to be determined ahead of time moves into a ‘blackbox’ ML model that is constantly learning and improving. Every interesting piece of content simply becomes a “candidate” for a push notification that the model can act on. The heavy lifting now needs to be done on:</p>
