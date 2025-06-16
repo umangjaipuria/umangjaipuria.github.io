@@ -11,8 +11,6 @@
     <link rel="stylesheet" href="/css/style.min.css">
 
     
-  
-    
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-VV2R9ZVM78"></script>
       <script>
         var doNotTrack = false;
@@ -27,10 +25,6 @@
           gtag('config', 'G-VV2R9ZVM78');
         }
       </script>
-    
-  
-
-
     <meta property="og:title" content="Deterministic vs Non-deterministic products"/>
     <meta property="og:description" content="How to build products that have a mind of their own (AI-driven)" /><meta property="og:type" content="article" />
 <meta property="og:url" content="https://umangj.xyz/post/deterministic-vs-non-deterministic-products/" /><meta property="article:section" content="writing" />
@@ -94,16 +88,14 @@
 <p>You cannot be prescriptive about what to do in every situation, but you can tell a model when it gets things wrong and when it gets things right. <strong>Create affordances in the product for users to express this, as they use the product. Models take this feedback into their training and constantly update themselves — your product is constantly improving on its own.</strong></p>
 <p>Here is <a href="https://sarahtavel.medium.com/feedback-loops-and-googles-home-field-advantage-with-llms-530e8099c7ec">Sarah Tavel on feedback loops</a>:</p>
 <blockquote>
-<p>When I was at Pinterest leading product for the Discovery team, we started to leverage deep learning for our recommendations. It was always the case that while deep learning enabled a step-function change in the results (as measured by user engagement), the results got dramatically better once we took that user engagement data and fed it back into the model to further tune the results. We’d go from a place of discontinuous change with each step-function upgrade of the model, to a world with a compounding feedback loop.</p>
-</blockquote>
+<p>When I was at Pinterest leading product for the Discovery team, we started to leverage deep learning for our recommendations. It was always the case that while deep learning enabled a step-function change in the results (as measured by user engagement), the results got dramatically better once we took that user engagement data and fed it back into the model to further tune the results. We’d go from a place of discontinuous change with each step-function upgrade of the model, to a world with a compounding feedback loop.</p></blockquote>
 <p>Even Chat GPT has a simple feedback mechanism — notice the thumbs up / thumbs down in their UI? One of the slickest feedback mechanism is in TikTok, where swiping away a video before finishing is negative feedback and watching it in its entirety is positive feedback — users generate a feedback loop in the natural course of using TikTok, without taking any extra steps.</p>
 <h1 id="3-see-like-a-state">3. See like a state</h1>
 <p>The book <a href="https://www.amazon.com/Seeing-Like-State-Condition-Paperbacks-ebook/dp/B085CMNS8P">Seeing Like a State</a> is a treatise on how governments have evolved to understand a nation, its citizens, and their lives from a central perspective to aid their planning — things like permanent last names, standardization of weights and measures, land surveys, all were created as modern governments felt the imperative to govern.</p>
 <p>The analogy* can extend to non-deterministic products. Every user, every situation, every set of input conditions results in a slightly different product experience. It is impossible to keep track of the countless individual flows that might get created. Instrument your product and create metrics to log everything that happens, for every user. <strong>Ultimately, you will need to rely on averages, medians, and points along a distribution to understand your product as there is no one single view.</strong></p>
 <p>Here’s an example of the difficulty this poses in practice. From <a href="https://www.platformer.news/p/yes-elon-musk-created-a-special-system">Casey Newton’s recent coverage about Elon Musk trying to understand why the Twitter algorithm is not prioritizing his tweets</a>:</p>
 <blockquote>
-<p>Absurd as Musk’s antics are, they do highlight a tension familiar to almost anyone who has ever used a social network: why are some posts more popular than others? Why am I seeing this thing, and not that one?  Engineers for services like TikTok and Instagram can offer partial, high-level answers to these questions. But ranking algorithms make predictions based on hundreds or thousands of signals, and deliver posts to millions of users, making it almost impossible for anyone to say with any degree of accuracy who sees what.</p>
-</blockquote>
+<p>Absurd as Musk’s antics are, they do highlight a tension familiar to almost anyone who has ever used a social network: why are some posts more popular than others? Why am I seeing this thing, and not that one?  Engineers for services like TikTok and Instagram can offer partial, high-level answers to these questions. But ranking algorithms make predictions based on hundreds or thousands of signals, and deliver posts to millions of users, making it almost impossible for anyone to say with any degree of accuracy who sees what.</p></blockquote>
 <p>With earlier generations of machine learning — techniques using regression, for example — it would be possible to develop intuition on why the model behaved a certain way, and hence explain outcomes. With techniques like deep learning, ML became a complete black box. It is impossible to know why it does what it does.</p>
 <p><em>(* I must acknowledge that Seeing Like a State is about all the ways centralized planning from governments has failed, but that doesn’t denigrate efforts to gain legibility into a large system comprised of diverse components.)</em></p>
 <h1 id="4-catch-edge-cases">4. Catch edge cases</h1>
