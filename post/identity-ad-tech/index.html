@@ -12,7 +12,7 @@
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-VV2R9ZVM78"></script>
       <script>
         var doNotTrack = false;
-        if ( false ) {
+        if ( true ) {
           var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
           var doNotTrack = (dnt == "1" || dnt == "yes");
         }
@@ -73,16 +73,16 @@
 <p><strong>a) Multiple devices.</strong> Users use multiple devices to access the same information and make the same transactions — a laptop, a smartphone, a tablet, and in the future, watches and glasses and who knows what else. And they shift between devices almost seamlessly.</p>
 <p>As an example, here’s how often people start various activities on their smartphone and continue it elsewhere:</p>
 <figure class="inline-image"><img src="/post/identity-ad-tech/img-multi-devices.png"><figcaption>
-      <p>
-          <a href="https://medium.com/@ameet/why-mobile-roi-is-still-hard-one-year-later-bd1e2694c064">(source)</a></p>
-    </figcaption>
+			<p>
+						<a href="https://medium.com/@ameet/why-mobile-roi-is-still-hard-one-year-later-bd1e2694c064">(source)</a></p>
+		</figcaption>
 </figure>
 
 <p>It is ironic that 10 years ago, marketers were trying to solve the opposite problem: who in the family is currently on the shared home computer and whether to show an ad for the latest video game or for a hotel in Belize.</p>
 <figure class="inline-image"><img src="/post/identity-ad-tech/img-shared-computer-to-many-devices.png"
-    alt="From a shared computer for a family to many devices for each person"><figcaption>
-      <p>From a shared computer for a family to many devices for each person</p>
-    </figcaption>
+			alt="From a shared computer for a family to many devices for each person"><figcaption>
+			<p>From a shared computer for a family to many devices for each person</p>
+		</figcaption>
 </figure>
 
 <p><strong>b) Apps are changing the game entirely.</strong> Firstly, there is no concept of cookies in apps. Even browsing the web on mobile has its own challenges with cookies. Secondly, apps are tightly controlled by Apple and Google: they have forbidden apps to access the (permanent) device ID, instead creating Advertising IDs for such use. But there are (artificial and technical) restrictions here: For example, only apps that actually show ads are allowed to read a user’s Ad ID; it is harder to track user behavior (as the convenient unit of a webpage doesn’t exist in apps); embedded browser views inside apps do not save cookies across sessions, etc. etc.</p>
@@ -91,10 +91,10 @@
 <p>Open ID never really caught on, but its hypothesis was correct: users don’t like creating and managing separate username/passwords for every service they use. And website and app developers prefer not to build a login/ID system if they can just let their users “login with Google” or “login with Facebook”or “login with Twitter”.</p>
 <p><strong>Facebook</strong> and <strong>Google</strong> are the largest identity providers today (<a href="http://qz.com/271286/how-facebook-and-google-are-taking-over-your-online-identity/">source</a>), but the battle is intensifying as everyone begins to realize the importance of this.</p>
 <figure class="inline-image"><img src="/post/identity-ad-tech/img-social-login-share.png"
-    alt="Identity providers today"><figcaption>
-      <p>Identity providers today
-          <a href="http://qz.com/271286/how-facebook-and-google-are-taking-over-your-online-identity/">(source)</a></p>
-    </figcaption>
+			alt="Identity providers today"><figcaption>
+			<p>Identity providers today
+						<a href="http://qz.com/271286/how-facebook-and-google-are-taking-over-your-online-identity/">(source)</a></p>
+		</figcaption>
 </figure>
 
 <p>However, identity is not limited to “login with X” functionality. Providing developers with cloud backend services (Parse, Apigee, etc.) analytics and marketing (Mixpanel, Urban Airship, etc.), and social sharing (“Like”, “Tweet” buttons, etc.) have proven successful strategies to get a foot in the door into apps and websites. Data then collected by these services can be tied back to identity.</p>
