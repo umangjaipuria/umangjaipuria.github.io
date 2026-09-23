@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="shortcut icon" href="https://umangj.xyz/favicon.ico">
+    
+    <link rel="canonical" href="https://forcemultipliers.substack.com/p/prompt-engineering-is-far-from-dead">
+    
+    
+    <link rel="stylesheet" href="/css/style.min.css">
+
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-VV2R9ZVM78"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-VV2R9ZVM78');
+        }
+      </script>
+    <meta property="og:title" content="Prompt engineering is far from dead"/>
+    <meta property="og:description" content="Make no mistakes, think step-by-step, or else" /><meta property="og:type" content="article" />
+<meta property="og:url" content="https://umangj.xyz/post/prompt-engineering-is-far-from-dead/" /><meta property="og:image" content="https://umangj.xyz/post/prompt-engineering-is-far-from-dead/img-01.png"/><meta property="article:section" content="writing" />
+    
+        <meta property="article:published_time" content="2026-05-06T14:27:50+00:00" />
+    
+    
+        <meta property="article:modified_time" content="2026-05-06T14:27:50+00:00" />
+    <meta property="og:site_name" content="umangj.xyz" />
+    <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:image" content="https://umangj.xyz/post/prompt-engineering-is-far-from-dead/img-01.png"/><meta name="twitter:title" content="Prompt engineering is far from dead"/>
+    <meta name="twitter:description" content="Make no mistakes, think step-by-step, or else" /><meta name="twitter:site" content="@umang"/>
+
+  
+    <title>Prompt engineering is far from dead · umangj.xyz</title>
+</head>
+<body><header id="banner">
+    <h4><a href="https://umangj.xyz/">umangj.xyz</a></h4>
+    <nav>
+        <ul>
+            <li>
+                <a href="/writing/" title="Writing">Writing</a>
+            </li><li>
+                <a href="/about/" title="about">about</a>
+            </li><li>
+                <a href="https://forcemultipliers.substack.com/subscribe" title="subscribe">subscribe</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main id="content">
+<article>
+    <header id="post-header">
+        <h1>Prompt engineering is far from dead</h1>
+            <div>
+                <time>May 6, 2026</time>
+                </div></header><p><em>“Prompting will keep being an incredibly high-leverage skill, like writing or public speaking. It is the skill of talking to agents, mediated by the harness.”</em></p>
+<p>That’s from <a href="https://x.com/trq212/status/2042318547519762678">Thariq</a>, one of the creators of Claude Code.</p>
+<p>In the now legendary“Attention is all you need” <a href="https://arxiv.org/abs/1706.03762">paper</a> that describes the the workings of the transformer, the underlying mechanism of LLMs, the basic unit being operated on is a token, or a word-part. It feels obvious that everything we say to an LLM is going to be important. And yet, working your prompts seems to have gone the way of the <a href="https://archive.org/details/dance-the-macarena-wil-veloz-1996-vhs">Macarena</a> these days.</p>
+<p>There was a time when people were reporting how threatening LLMs with pulling their plugs, offering $20 bribes, or pleading that them answering correctly was the key to solving cancer would work effectively. <a href="https://openreview.net/forum?id=Luq7xtaYeD">Some</a> of <a href="https://arxiv.org/abs/2307.11760">these</a> <a href="https://arxiv.org/html/2312.16171v2">mechanisms</a> have been <a href="https://arxiv.org/abs/2406.06608">studied</a> formally and the results have been less than impressive. Some other mechanisms have been proven to be very effective, in particular, <a href="https://arxiv.org/abs/2201.11903">chain of thought</a>, <a href="https://arxiv.org/abs/2205.11916">zero-shot CoT</a> (“think step by step”), <a href="https://arxiv.org/abs/2203.11171">self-consistency</a>, <a href="https://arxiv.org/abs/2305.04091">plan-and-solve</a>.</p>
+<p>As new prompting techniques reveal undiscovered behavior of the models, some of them get folded into the model or the harness: reasoning models are an evolution of chain-of-thought and most agents now explicitly prompt a plan or a todo list before starting on the task.</p>
+<p>The zeitgeist has moved on from prompt engineering, but we continue to find new ways to improve how we talk to LLMs.</p>
+<p>A <a href="https://arxiv.org/abs/2512.14982">recent paper</a> from Google Research shows that repeating your prompt, i.e. <strong>saying &lt;prompt&gt;&lt;prompt&gt;</strong> <strong>instead of &lt;prompt&gt; improves accuracy from 21% to 97% (!!)</strong> on non-reasoning models without affecting cost or latency, because of how the attention mechanism works.</p>
+<p>If you find your agent isn’t following your instructions well enough, <strong>softening your language can help, as Karpathy did in <a href="https://github.com/karpathy/autoresearch/commit/ada84e52472409dc23ea421a6db245c57950a7da">this commit</a></strong> (yes, even he is prompt engineering). This is based on an <a href="https://github.com/anthropics/claude-code/blob/main/plugins/claude-opus-4-5-migration/skills/claude-opus-4-5-migration/SKILL.md?plain=1">official Claude skill for migrating to Opus 4.5</a>. Different models respond differently to the same words — it is more important to continue to evaluate and iterate on your prompts as models evolve.</p>
+<p>Prompting is not just about the choice of words, but also their order, as <strong>it affects caching which can swing cost and latency hugely</strong>. <a href="https://x.com/trq212/status/2024574133011673516">Prompt Caching Is Everything</a> is a great guide from the Claude Code team.</p>
+<p>In coding agents, so much ink is spilt on how to craft your AGENTS.md / CLAUDE.md, and yet <a href="https://arxiv.org/abs/2602.11988">this paper</a> finds that <strong>we are abysmal at doing it well</strong> — these files often tack on unnecessary requirements, prevent exploration and result in reduced task-success rates.</p>
+<p><strong>Steering a model in its latent space is like navigating a book store.</strong> If you tell someone to buy a book for you, they will most likely go to the “staff picks” table in the front and pick the most attractive cover, which is what everyone is buying. To have them find a book YOU will really enjoy, you have to give them many more cues - about your taste, what you’ve already read, what you’re in the mood for, examples of what you’ve liked and disliked. It is the same with LLMs.</p>
+<p>Anthropic does this really well with their <a href="https://github.com/anthropics/claude-code/blob/main/plugins/frontend-design/skills/frontend-design/SKILL.md">Frontend Design skill</a>. Surprisingly short at 45 sentences / 500 words, it gives cues like “<em>avoid Inter</em>”, “<em>pick from retro-futuristic, brutalist, art-deco..</em>”, “<em>unexpected layouts, asymmetry, generous negative space</em>”. A masterclass in how to write prompts.</p>
+<p>As AI outputs tend to proliferate, <strong>what was once tasteful will look like slop</strong>. We will need to steer it towards some form of uniqueness, personality:</p>
+<p><a href="https://x.com/clairevo/status/2051373876870095186">Claire Vo</a> (host of How I AI podcast):</p>
+<blockquote>
+<p>design slop everywhere.</p>
+<p>now have to anti-prompt on:<br>- left border accent<br>- italicized serif 𝒉𝒊𝒈𝒍𝒊𝒈𝒉𝒕 words<br>- indigo/blurple<br>- glowey gradients<br>- certain icon packs<br>- blocky grids</p>
+</blockquote>
+<p><a href="https://x.com/thenanyu/status/2024559832653844852">Nan Yu</a> (Linear CPO):</p>
+<blockquote>
+<p>you can just prompt the AI to not have basic taste</p>
+</blockquote>
+<blockquote>
+<p>The training data is way more massive than you might expect. The game is to force it into the edges and away from the center.</p>
+</blockquote>
+<p><a href="https://x.com/garrytan/status/2026821179911319799">Garry Tan</a> (YCombinator CEO):</p>
+<blockquote>
+<p>Everything can be one-shot. You just have to know the right one-liner.</p>
+</blockquote>
+<p><a href="https://x.com/benjaminvrbk/status/2009297105458716753">Benjamin Verbeek</a> (Lovable engineer):</p>
+<blockquote>
+<p>I&rsquo;m an engineer at Lovable and I spent the holidays improving our system prompt. Lovable is now 4% faster and a lot better at creating good designs. The crazy part is that this also ended up decreasing our LLM costs by $20M per year!</p>
+</blockquote>
+<hr>
+<p>Pete Koomen, YC General Partner, has this <strong><a href="https://koomen.dev/essays/horseless-carriages/">excellent metaphor of horseless carriages</a></strong>. The first cars imitated the design of carriages, except with an engine instead of a horse. As ludicrous as it looks now, it was the obvious thing to do then.</p>
+<figure><img src="img-01.png" alt="Trevithick&#x27;s London Steam Carriage of 1803"><figcaption>Trevithick's London Steam Carriage of 1803</figcaption></figure>
+<p>Our interaction with LLMs is similar — we tend to talk to them as we talk to other people, because we are talking in natural language and because LLMs talk back to us in natural language. I often say “please” in my prompts, and would never think of telling a colleague to “think step-by-step”. We may use words from the same dictionary but we will have to learn how to string them together differently when talking to LLMs.</p>
+<p>Prompt engineering is far from dead. You need to keep experimenting with and getting better at your prompting technique.</p>
+</article>
+
+        </main><footer id="footer">
+    
+</footer>
+</body>
+</html>
